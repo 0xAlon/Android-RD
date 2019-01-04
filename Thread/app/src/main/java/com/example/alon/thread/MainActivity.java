@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.concurrent.Executor;
@@ -19,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
     private static String TAG = "Thread";
     public Handler handler;
     public ProgressBar progressBar;
+    TextView textView;
 
     @SuppressLint("HandlerLeak")
     @Override
@@ -68,6 +70,10 @@ public class MainActivity extends AppCompatActivity {
 
         //CustomThread1 thread1 = new CustomThread1();
         //thread1.start();
+
+        textView = findViewById(R.id.simpleText);
+        new Async(textView).execute(1,2,3,4,5,6,7,8,9);
+
 
     }
 
